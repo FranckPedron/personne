@@ -1,4 +1,11 @@
-class Personne:
+class EtreVivant:
+    ESPECE_ETRE_VIVANT = ""
+
+    def AfficherInfosEtreVivant(self):
+        print("Infos être vivant :" + self.ESPECE_ETRE_VIVANT)
+
+
+class Personne(EtreVivant):
     ESPECE_ETRE_VIVANT = "Humain"
 
     def __init__(self, nom: str = "", age: int = 0):
@@ -27,9 +34,6 @@ class Personne:
     def DemanderNom(self):
         nom = input("Quel est votre nom ? ")
         return nom
-
-    def AfficherInfosEtreVivant(self):
-        print("Infos être vivant :" + self.ESPECE_ETRE_VIVANT)
 
 
 liste_personnes = [
