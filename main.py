@@ -1,4 +1,6 @@
 class Personne:
+    ESPECE_ETRE_VIVANT = "Humain"
+
     def __init__(self, nom: str = "", age: int = 0):
         if nom == "":
             self.nom = self.DemanderNom()
@@ -26,11 +28,16 @@ class Personne:
         nom = input("Quel est votre nom ? ")
         return nom
 
+    def AfficherInfosEtreVivant(self):
+        print("Infos être vivant :" + self.ESPECE_ETRE_VIVANT)
 
-personne1 = Personne("Jean", 0)
-personne2 = Personne("Paul", 15)
-personne3 = Personne("", 45)
 
-personne1.SePresenter()
-personne2.SePresenter()
-personne3.SePresenter()
+liste_personnes = [
+                 Personne("Jean", 30),
+                 Personne("Paul", 15),
+                 Personne("Zoe",45)]
+
+for personne in liste_personnes:
+    personne.SePresenter()
+    personne.AfficherInfosEtreVivant()
+    print()
